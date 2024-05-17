@@ -48,6 +48,9 @@ public class Visita {
     @JoinColumn(name = "recepcionista_id")
     private Recepcionista AtendidoPor; */
 
+    @Enumerated(EnumType.STRING)
+    private Destino destino;
+    
     private String diagnostico;
     private Integer cantidadDispensada;
 
