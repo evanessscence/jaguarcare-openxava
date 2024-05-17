@@ -22,6 +22,9 @@ public class Visitante {
 
     @Enumerated(EnumType.STRING)
     private Carrera carrera;
+    
+    @Enumerated(EnumType.STRING)
+    private TipoVisitante tipo;
 
     private String telefono;
 
