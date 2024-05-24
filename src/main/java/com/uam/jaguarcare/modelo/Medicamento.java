@@ -50,8 +50,11 @@ public class Medicamento {
     private Date vencimiento;
     @Column
     private String indicaciones;
-    
-    private Integer cantidad;
+    @Column
+    private Integer cantidadDisponible;
+
+	@Column
+	private Integer cantidadMinima;
     
     /* @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "visita_id")
