@@ -25,10 +25,24 @@ public class Visita {
 
     private LocalTime horaDeSalida;
 
+<<<<<<< HEAD
    @ManyToOne(fetch=FetchType.LAZY, optional = true)
    @DescriptionsList
     Sintomatologia sintomatologia; 
      
+=======
+    @Hidden
+    private LocalTime horadeSalida;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "visitante_id")
+    private Visitante visitante;
+
+   /* @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "recepcionista_id")
+    private Recepcionista AtendidoPor; */
+
+>>>>>>> refs/remotes/origin/master
     @Enumerated(EnumType.STRING)
     private Destino destino;
     
