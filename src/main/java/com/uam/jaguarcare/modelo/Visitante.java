@@ -1,7 +1,5 @@
 package com.uam.jaguarcare.modelo;
 
-import java.util.*;
-
 import javax.persistence.*;
 
 import lombok.*;
@@ -22,11 +20,11 @@ public class Visitante {
 
     @Enumerated(EnumType.STRING)
     private Carrera carrera;
+    
+    @Enumerated(EnumType.STRING)
+    private TipoVisitante tipo;
 
     private String telefono;
 
-
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "visitante",cascade = CascadeType.ALL)
-    List<Visita> visitas;
 
 }

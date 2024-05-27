@@ -1,14 +1,9 @@
 package com.uam.jaguarcare.modelo;
 
-import java.util.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-import javax.persistence.*;
-
-import org.openxava.annotations.*;
-
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Column;
 import lombok.*;
 
 @Entity
@@ -16,20 +11,10 @@ import lombok.*;
 @Setter
 public class Sintomatologia {
 
-    @SequenceGenerator(
-            name = "sintoma_sequence",
-            sequenceName = "sintoma_sequence",
-            allocationSize = 1,
-            initialValue = 1000
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "sintoma_sequence"
-    )
-    @Id 
-    @Hidden
-    private Integer Id;
-    private String nombre;
+	@Id     
 
- @OneToMany(mappedBy="sintomatologia")
-    List<Visita> visitas; }
+	String id;
+ 
+    @Column(length=50)
+    String descripcion;
+ }

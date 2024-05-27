@@ -1,11 +1,11 @@
-@import 'terra.css';
+@import 'terras.css';
 
 :root {
-	--my-pink: #42abb4;
-	--my-dark-pink: #298289;
-	--my-beige: #ffffff;
-	--my-brown: #C6A49A;
-	--transparent-pink: rgb(198, 164, 154, 0.2); 
+	--my-pink: #5F9EA0;
+	--my-dark-pink: #008B8B;
+	--my-beige: white;
+	--my-brown: #2F4F4F;
+	--transparent-pink: rgb(173, 216, 230, 0.2); 
 	
 	 
 	/* Modules left menu */
@@ -39,4 +39,18 @@
 	/* Editors */
 	--required-editor-border: var(--my-dark-pink);
 	
+}
+
+#beta {
+    position:absolute;
+    right: -65px;
+    top: 5px;
+    color: white;
+    font-size: 120%;
+    font-weight: bold;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    background: DarkCyan;
+    padding: 50px 50px 5px 50px;
+    z-index: -10;
 }

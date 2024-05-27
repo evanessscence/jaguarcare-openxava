@@ -1,6 +1,9 @@
 package com.uam.jaguarcare.modelo;
 
-import jakarta.persistence.*;
+
+
+import javax.persistence.*;
+
 import lombok.*;
 
 @Entity
@@ -8,10 +11,9 @@ import lombok.*;
 @Setter
 public class Recepcionista {
     @Id
-    private String CIF;
-    private String nombre;
-    private String contrasenia;
+    String Cedula;
+    @Column(length=50)
+    String name;
+    String password;
 
-  /*  @OneToMany(fetch = FetchType.LAZY,mappedBy = "usuario")
-    List<Visita> visitas; */
 }

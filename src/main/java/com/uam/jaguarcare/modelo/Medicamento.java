@@ -2,19 +2,8 @@ package com.uam.jaguarcare.modelo;
 
 import java.util.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 
-import org.openxava.annotations.*;
-
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.SequenceGenerator;
 import lombok.*;
 
 @Entity
@@ -22,19 +11,8 @@ import lombok.*;
 @Setter
 public class Medicamento {
 	
-	  @SequenceGenerator(
-	            name = "med_sequence",
-	            sequenceName = "med_sequence",
-	            allocationSize = 1,
-	            initialValue = 1000
-	    )
-	    @GeneratedValue(
-	            strategy = GenerationType.SEQUENCE,
-	            generator = "med_sequence"
-	    )
-    @Id
-    @Hidden
-    private Integer id;
+	@Id 
+    private String id;
     @Column
     private String nombreComercial;
     @Column
@@ -50,13 +28,14 @@ public class Medicamento {
     private Date vencimiento;
     @Column
     private String indicaciones;
-    
-    private Integer cantidad;
+    @Column
+    private Integer cantidadDisponible;
+
+	@Column
+	private Integer cantidadMinima;
     
     /* @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "visita_id")
     private Visita visita;*/
 
- 	@ManyToMany(fetch = FetchType.LAZY, mappedBy = "medicamento")
-    private List<Compra> compra; 
 }
