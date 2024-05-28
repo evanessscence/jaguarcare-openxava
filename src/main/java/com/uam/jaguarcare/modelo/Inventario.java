@@ -4,6 +4,8 @@ import java.time.*;
 
 import javax.persistence.*;
 
+import org.openxava.annotations.*;
+
 import lombok.*;
 
 @Entity
@@ -12,8 +14,11 @@ import lombok.*;
 public class Inventario {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Hidden
+	private Long idInventario;
 
-	private String numeroCompra;
+	private String numeroCompra; //Como ya no existe compra, no deberia borrarse?
 
 	private LocalDate fecha;
 

@@ -1,2 +1,11 @@
 /*C3*/SET SCHEMA PUBLIC
 DISCONNECT
+/*C4*/SET SCHEMA PUBLIC
+alter table Inventario add column idInventario bigint not null
+alter table Inventario add column medicamentoComprado_idMedicamento bigint
+alter table Medicamento add column idMedicamento bigint not null
+alter table Sintomatologia add column idSintomatologia bigint not null
+alter table Visita add column idVisita bigint not null
+alter table Visita add column sintomatologia_idSintomatologia bigint
+alter table Visita_Medicamento add column Visita_idVisita bigint not null
+alter table Visita_Medicamento add column medicamentos_idMedicamento bigint not null

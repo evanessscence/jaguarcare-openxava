@@ -14,7 +14,9 @@ import lombok.*;
 @Setter
 public class Visita {
 	@Id 
-    private String id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Hidden
+    private long idVisita;
 	
    @ManyToOne(fetch = FetchType.LAZY)
     private Visitante visitante; 
@@ -27,8 +29,8 @@ public class Visita {
     private LocalTime horaDeSalida;
 
    @ManyToOne(fetch=FetchType.LAZY, optional = true)
-   @DescriptionsList
-    Sintomatologia sintomatologia; 
+   @DescriptionsList(descriptionProperties = "descripcion")
+    private Sintomatologia sintomatologia; 
      
 
     @Enumerated(EnumType.STRING)

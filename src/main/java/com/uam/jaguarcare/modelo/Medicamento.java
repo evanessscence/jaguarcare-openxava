@@ -4,6 +4,8 @@ import java.util.*;
 
 import javax.persistence.*;
 
+import org.openxava.annotations.*;
+
 import lombok.*;
 
 @Entity
@@ -11,8 +13,11 @@ import lombok.*;
 @Setter
 public class Medicamento {
 	
-	@Id 
-    private String id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Hidden
+	private Long idMedicamento;
+	
     @Column
     private String nombreComercial;
     @Column
